@@ -1,3 +1,14 @@
+From 4a63c1fd1dd8f31441f93d24db6eaae370f4e1dd Mon Sep 17 00:00:00 2001
+From: Prasanth <kesavarapu.siva@gmail.com>
+Date: Sun, 28 Mar 2021 07:58:12 +0530
+Subject: [PATCH] patch generation
+
+---
+ README.md        | 337 +----------------------------------------------
+ requirements.txt |  14 +-
+ setup.py         |   5 +-
+ 3 files changed, 4 insertions(+), 352 deletions(-)
+
 diff --git a/README.md b/README.md
 index 0279b9c..4d9ed64 100644
 --- a/README.md
@@ -364,7 +375,7 @@ index 9e8a344..62c985d 100644
 +textx==2.3.0
 \ No newline at end of file
 diff --git a/setup.py b/setup.py
-index 88929d3..f7445d2 100644
+index 7effe50..e9b0898 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -19,7 +19,7 @@ def requirements():
@@ -373,10 +384,10 @@ index 88929d3..f7445d2 100644
  setup(
 -    name="dothttp_req",
 +    name="dothttp_req-wasm",
-     version="0.0.10",
      author="prasanth",
      author_email="kesavarapu.siva@gmail.com",
-@@ -28,9 +28,6 @@ setup(
+     description=("DotHttp recommended tool for making http requests."),
+@@ -27,9 +27,6 @@ setup(
      package_data={
          "": ["*.tx", "*.md"]
      },
@@ -386,3 +397,6 @@ index 88929d3..f7445d2 100644
      options={"bdist_wheel": {"universal": False}},
      packages=find_packages(),
      install_requires=requirements(),
+-- 
+2.17.1.gvfs.2.5.g2962052
+
