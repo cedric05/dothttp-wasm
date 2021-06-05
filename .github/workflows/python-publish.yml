@@ -21,6 +21,7 @@ jobs:
           git fetch --all
           git checkout ${{ env.dothttpversion }}
           python -m pip install -r requirements.txt
+          python -m pip install python-magic
           python -m unittest
           git apply ../*.patch
       - name: Install dependencies
