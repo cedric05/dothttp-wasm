@@ -10,13 +10,12 @@ Subject: [PATCH] patch generation
  3 files changed, 4 insertions(+), 352 deletions(-)
 
 diff --git a/README.md b/README.md
-index 0279b9c..4d9ed64 100644
+index a42ec80..57781e8 100644
 --- a/README.md
 +++ b/README.md
-@@ -1,336 +1,3 @@
+@@ -1,349 +1 @@
 -# Inspiration
-+dothttp-req-wasm is minimal package, made just so it can be useable in pyodide.
- 
+-
 -With the rise in usage of microservices, using http/curl is essential part of most developer's jobs. There are multiple
 -options out there (some are curl, postmant) . My Ideal choice would be to use curl but problems with it is having no
 -history. Postman solves that problem but once user logs in, postman actually syncs it to their servers which i did not
@@ -351,6 +350,19 @@ index 0279b9c..4d9ed64 100644
 -```
 -
 -checkout [examples]('./examples/dothttpazure.http')
+-
+-
+------------
+-### Vscode alternatives
+-
+-- [rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) written in typescript
+-- [httpYac](https://marketplace.visualstudio.com/items?itemName=anweber.vscode-httpyac)  written in typescript
+-- [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) closed source
+-
+----------
+-### Non Vscode alternatives
+-- [http-client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)  closed source
+-- [dothttp](https://github.com/tonsV2/dothttp)  written in python
 +please refer [dothttp](https://github.com/cedric05/dothttp) for more information
 \ No newline at end of file
 diff --git a/requirements.txt b/requirements.txt
