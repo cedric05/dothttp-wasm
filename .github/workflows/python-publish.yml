@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  dothttpversion: v0.0.30
+  dothttpversion: v0.0.31
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           cd dothttp
           git fetch --all
           git checkout ${{ env.dothttpversion }}
-          python -m pip install -r requirements.txt
+          python -m pip install -r all_requirements.txt
           python -m pip install python-magic
           python -m unittest
           git apply ../*.patch
