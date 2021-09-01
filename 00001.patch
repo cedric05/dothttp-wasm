@@ -402,7 +402,7 @@ index 7effe50..e9b0898 100644
      description=("DotHttp recommended tool for making http requests."),
 @@ -27,9 +27,6 @@ setup(
      package_data={
-         "": ["*.tx", "*.md"]
+         "": ["*.tx", "*.md","*.js"]
      },
      include_package_data=True,
 -    entry_points={
