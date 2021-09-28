@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  dothttpversion: v0.0.38
+  dothttpversion: v0.0.39b0
 jobs:
   deploy:
     runs-on: ubuntu-latest
