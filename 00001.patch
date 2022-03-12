@@ -1,19 +1,8 @@
-From 4a63c1fd1dd8f31441f93d24db6eaae370f4e1dd Mon Sep 17 00:00:00 2001
-From: Prasanth <kesavarapu.siva@gmail.com>
-Date: Sun, 28 Mar 2021 07:58:12 +0530
-Subject: [PATCH] patch generation
-
----
- README.md        | 337 +----------------------------------------------
- requirements.txt |  14 +-
- setup.py         |   5 +-
- 3 files changed, 4 insertions(+), 352 deletions(-)
-
 diff --git a/README.md b/README.md
-index a42ec80..57781e8 100644
+index a6d8aa3..57781e8 100644
 --- a/README.md
 +++ b/README.md
-@@ -1,349 +1 @@
+@@ -1,360 +1 @@
 -# Inspiration
 -
 -With the rise in usage of microservices, using http/curl is essential part of most developer's jobs. There are multiple
@@ -25,6 +14,12 @@ index a42ec80..57781e8 100644
 -
 -dothttp will provide simple, cleaner architecture for making http requests. It uses xtext (eclipse developed dsl) to
 -build a custom dsl.
+-
+-
+-### Documentation
+-
+-More information or docs can be cound at https://docs.dothttp.dev
+-
 -
 ----
 -Go through this example for better understanding. for babysteps click [here](#first-dothttprequest-and-more)
@@ -274,9 +269,14 @@ index a42ec80..57781e8 100644
 -
 -### Authentication
 -
--- basic auth currently **dothttp** only supports basic auth. more are yet to come.
--
+-#### BasicAuth
 -`basicauth('username','password')'` --> will compute add respective headers.
+-
+-#### DigestAuth
+-`digestauth('username','password')'` --> will compute add respective headers.
+-
+-#### NtlmAuth
+-`ntlmauth('username','password')'` --> will compute add respective headers.
 -
 -### Property file
 -
@@ -351,7 +351,6 @@ index a42ec80..57781e8 100644
 -
 -checkout [examples]('./examples/dothttpazure.http')
 -
--
 ------------
 -### Vscode alternatives
 -
@@ -363,13 +362,14 @@ index a42ec80..57781e8 100644
 -### Non Vscode alternatives
 -- [http-client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)  closed source
 -- [dothttp](https://github.com/tonsV2/dothttp)  written in python
+-
 +please refer [dothttp](https://github.com/cedric05/dothttp) for more information
 \ No newline at end of file
 diff --git a/requirements.txt b/requirements.txt
-index 3da919d..aab5123 100644
+index 173dbb7..aab5123 100644
 --- a/requirements.txt
 +++ b/requirements.txt
-@@ -1,16 +1,2 @@
+@@ -1,17 +1,2 @@
 -arpeggio==1.10.1
 -attrs==20.3.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
 -certifi==2020.12.5
@@ -386,13 +386,14 @@ index 3da919d..aab5123 100644
 -urllib3==1.26.5; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'
 -requests-unixsocket==0.2.0
 -requests-aws4auth==1.1.1
+-requests_ntlm==1.1.0
 +textx==2.3.0
 \ No newline at end of file
 diff --git a/setup.py b/setup.py
-index 7effe50..e9b0898 100644
+index a398ec1..9e6ee73 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -19,7 +19,7 @@ def requirements():
+@@ -27,7 +27,7 @@ def requirements():
  
  
  setup(
@@ -401,8 +402,7 @@ index 7effe50..e9b0898 100644
      author="prasanth",
      author_email="kesavarapu.siva@gmail.com",
      description=("DotHttp recommended tool for making http requests."),
-@@ -27,9 +27,6 @@ setup(
-     package_data={
+@@ -36,9 +36,6 @@ setup(
          "": ["*.tx", "*.md","*.js"]
      },
      include_package_data=True,
@@ -412,6 +412,3 @@ index 7effe50..e9b0898 100644
      options={"bdist_wheel": {"universal": False}},
      packages=find_packages(exclude=EXCLUDE),
      install_requires=requirements(),
--- 
-2.17.1.gvfs.2.5.g2962052
-
