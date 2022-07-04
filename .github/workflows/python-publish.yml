@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  dothttpversion: v0.0.41a4
+  dothttpversion: v0.0.41a5
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9"
+          python-version: "3.10.5"
       - name: Install dependencies
         run: |
           git clone https://github.com/cedric05/dothttp.git dothttp
