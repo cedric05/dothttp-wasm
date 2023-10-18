@@ -1,19 +1,17 @@
 diff --git a/README.md b/README.md
-index a6d8aa3..57781e8 100644
+index b40a5ab..098fe08 100644
 --- a/README.md
 +++ b/README.md
-@@ -1,360 +1 @@
+@@ -1,358 +1 @@
 -# Inspiration
 -
--With the rise in usage of microservices, using http/curl is essential part of most developer's jobs. There are multiple
--options out there (some are curl, postmant) . My Ideal choice would be to use curl but problems with it is having no
--history. Postman solves that problem but once user logs in, postman actually syncs it to their servers which i did not
--like.
+-With the rise in usage of microservices, Making http requests is essential job of most devs. For these, there are multiple options like curl, insomnia postman. My Ideal choice is to use curl but problems with it is, having no history and no easy way to save and rerun. Postman solves that problem, but once user logs in(earlier it used to be optional, now its mandatory), it stores all request metadata(body/headers/urls/credentails) to their servers although it helps solve using it across multiple devices, backup but it could be potential security loop hole if they can access it. (now a days, postman desktop is super slow also).
+-
+-This project aims to solve save&reuse requests, maintaining history and no sync in proprietery servers (although you can achive sync via commiting http files into git).
 -
 -## GOAL
 -
--dothttp will provide simple, cleaner architecture for making http requests. It uses xtext (eclipse developed dsl) to
--build a custom dsl.
+-dothttp will provide simple, cleaner architecture for making http requests. It uses xtext (eclipse developed dsl) to build a custom dsl.
 -
 -
 -### Documentation
@@ -143,7 +141,7 @@ index a6d8aa3..57781e8 100644
 -## First DotHttpRequest and more
 -
 -```get.http
--GET "https://httpbin.org/get"
+-GET "http://localhost:8000/get"
 -```
 -
 -`dothttp get.http`  or `python -m dothttp get.http`
@@ -164,14 +162,14 @@ index a6d8aa3..57781e8 100644
 -    "X-Amzn-Trace-Id": "Root=1-6022266a-20fb552e530ba3d90c75be6d"
 -  },
 -  "origin": "117.216.243.24",
--  "url": "https://httpbin.org/get"
+-  "url": "http://localhost:8000/get"
 -}
 -```
 -
 -### POST request
 -
 -```post.http
--POST "https://httpbin.org/post"
+-POST "http://localhost:8000/post"
 -```
 -
 -```json
@@ -189,7 +187,7 @@ index a6d8aa3..57781e8 100644
 -  },
 -  "json": null,
 -  "origin": "117.216.243.24",
--  "url": "https://httpbin.org/post"
+-  "url": "http://localhost:8000/post"
 -}
 -```
 -
@@ -216,7 +214,7 @@ index a6d8aa3..57781e8 100644
 -- `json({"key": "value"})` for json payload.
 -- `fileinput("path/to/file", "type")` uploads file as payload (type is optional).
 -- `files(("photo", "path/to/file/photo.jpg", "image/jpeg"),
--  ("photo details", '{"name":"prasanth"}', "application/json")   
+-  ("photo details", '{"name":"prasanth"}', "application/json")
 -  )`
 -
 -  for multipart upload
@@ -234,7 +232,7 @@ index a6d8aa3..57781e8 100644
 -### Templating
 -
 -```.http
--POST 'https://httpbin.org/post'
+-POST 'http://localhost:8000/post'
 -? ("{{key}}", "{{value}}")
 -data('{"{{key}}" :"{{value}}"}', 'application/json')
 -```
@@ -363,5 +361,4 @@ index a6d8aa3..57781e8 100644
 -- [http-client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)  closed source
 -- [dothttp](https://github.com/tonsV2/dothttp)  written in python
 -
-+Please refer [dothttp](https://github.com/cedric05/dothttp) for more information
-\ No newline at end of file
++Please refer [dothttp](https://github.com/cedric05/dothttp) for more information.
