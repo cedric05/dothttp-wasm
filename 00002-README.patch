@@ -214,7 +214,7 @@ index b40a5ab..098fe08 100644
 -- `json({"key": "value"})` for json payload.
 -- `fileinput("path/to/file", "type")` uploads file as payload (type is optional).
 -- `files(("photo", "path/to/file/photo.jpg", "image/jpeg"),
--  ("photo details", '{"name":"prasanth"}', "application/json")
+-  ("photo details", '{"name":"prasanth"}', "application/json")   
 -  )`
 -
 -  for multipart upload
