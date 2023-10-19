@@ -1,10 +1,16 @@
 name: Upload Python Package
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+    inputs:
+      dothttpversion:
+        description: 'version of dothttp-wasm to release'     
+        required: true
+        # default: '0.0.42a12'
 env:
-  dothttpversion: v0.0.42a11
+  dothttpversion: ${{ github.event.inputs.dothttpversion }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
