@@ -1,5 +1,5 @@
 diff --git a/setup.py b/setup.py
-index a398ec1..9e6ee73 100644
+index 1fcfbd1..125ad3c 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -27,7 +27,7 @@ def requirements():
@@ -12,7 +12,7 @@ index a398ec1..9e6ee73 100644
      author_email="kesavarapu.siva@gmail.com",
      description=("DotHttp recommended tool for making http requests."),
 @@ -36,9 +36,6 @@ setup(
-         "": ["*.tx", "*.md","*.js"]
+         "": ["*.tx", "*.md", "*.js"]
      },
      include_package_data=True,
 -    entry_points={
