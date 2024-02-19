@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       dothttpversion:
-        description: 'version of dothttp-wasm to release'     
+        description: "version of dothttp-wasm to release (don't prefix `v`)"
         required: true
         # default: '0.0.42a12'
 env:
@@ -30,7 +30,7 @@ jobs:
           git clone https://github.com/cedric05/dothttp.git dothttp
           cd dothttp
           git fetch --all
-          git checkout ${{ env.dothttpversion }}
+          git checkout v${{ env.dothttpversion }}
           python -m pip install -r all_requirements.txt
           python -m pip install python-magic
           docker run -d -p 8000:80 kennethreitz/httpbin 
