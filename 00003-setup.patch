@@ -1,8 +1,8 @@
 diff --git a/setup.py b/setup.py
-index 1fcfbd1..125ad3c 100644
+index b789c32..c7fed70 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -27,7 +27,7 @@ def requirements():
+@@ -32,22 +32,16 @@ def requirements():
  
  
  setup(
@@ -11,13 +11,18 @@ index 1fcfbd1..125ad3c 100644
      author="prasanth",
      author_email="kesavarapu.siva@gmail.com",
      description=("DotHttp recommended tool for making http requests."),
-@@ -36,9 +36,6 @@ setup(
-         "": ["*.tx", "*.md", "*.js"]
-     },
+     license="MIT",
+     package_data={"": ["*.tx", "*.md", "*.js"]},
      include_package_data=True,
 -    entry_points={
--        'console_scripts': ['dothttp=dothttp.__main__:main'],
+-        "console_scripts": ["dothttp=dothttp.__main__:main"],
 -    },
      options={"bdist_wheel": {"universal": False}},
      packages=find_packages(exclude=EXCLUDE),
      install_requires=requirements(),
+-    extras_require={
+-        "js": ["js2py"]
+-    },
+     long_description=read("README.md"),
+     long_description_content_type=("text/markdown"),
+     classifiers=[
