@@ -1,0 +1,11 @@
+diff --git a/dothttp/script/__init__.py b/dothttp/script/__init__.py
+index e052839..2b3dd3c 100644
+--- a/dothttp/script/__init__.py
++++ b/dothttp/script/__init__.py
+@@ -1 +1,4 @@
+-from .js3py import *
++try:
++    from .js3py import *
++except:
++    pass
+\ No newline at end of file

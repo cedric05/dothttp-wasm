@@ -1,5 +1,5 @@
 diff --git a/README.md b/README.md
-index b40a5ab..098fe08 100644
+index b40a5ab..acc9691 100644
 --- a/README.md
 +++ b/README.md
 @@ -1,358 +1 @@
@@ -361,4 +361,4 @@ index b40a5ab..098fe08 100644
 -- [http-client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)  closed source
 -- [dothttp](https://github.com/tonsV2/dothttp)  written in python
 -
-+Please refer [dothttp](https://github.com/cedric05/dothttp) for more information.
++Please refer [dothttp](https://github.com/cedric05/dothttp-wasm) for more information.

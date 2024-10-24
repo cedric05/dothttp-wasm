@@ -1,0 +1,40 @@
+diff --git a/dothttp/parse/__init__.py b/dothttp/parse/__init__.py
+index e2c106a..253f38d 100644
+--- a/dothttp/parse/__init__.py
++++ b/dothttp/parse/__init__.py
+@@ -41,12 +41,16 @@ from ..models.parse_models import (
+     TestScript,
+ )
+ from ..property_schema import property_schema
+-from ..script import ScriptExecutionJs, ScriptExecutionPython
+ from ..utils.common import get_real_file_path, triple_or_double_tostring
+ from ..utils.constants import *
+ from ..utils.property_util import PropertyProvider
+ from .dsl_jsonparser import json_or_array_to_json
+ 
++try:
++    from ..script import ScriptExecutionJs, ScriptExecutionPython
++except:
++    pass
++
+ 
+ def install_unix_socket_scheme():
+     uses_relative.append(UNIX_SOCKET_SCHEME)
+@@ -859,7 +863,7 @@ class HttpDefBase(BaseModelProcessor):
+         self.load_test_script()
+         # run prerequest script
+         # as it will set some variables
+-        self.run_prerequest_script()
++        # self.run_prerequest_script()
+ 
+         self.load_method()
+         self.load_url()
+@@ -871,7 +875,7 @@ class HttpDefBase(BaseModelProcessor):
+         self.load_certificate()
+         self.load_output()
+         self._loaded = True
+-        self.script_execution.pre_request_script()
++        # self.script_execution.pre_request_script()
+ 
+     def run_prerequest_script(self):
+         execution_cls = (
