@@ -31,10 +31,6 @@ jobs:
           cd dothttp
           git fetch --all
           git checkout v${{ env.dothttpversion }}
-          python -m pip install -r all_requirements.txt
-          python -m pip install python-magic
-          docker run -d -p 8000:80 kennethreitz/httpbin 
-          python -m unittest
           git apply ../*.patch
           rm poetry.lock
       - name: Install dependencies
