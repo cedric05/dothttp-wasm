@@ -6,7 +6,7 @@ index 7332c5f..324f7e8 100644
  [tool.poetry]
 -name = "dothttp-req"
 +name = "dothttp-req-wasm"
- version = "0.0.43"
+ version = "0.0.43a23"
  description = "Dothttp is Simple http client for testing and development"
  authors = ["Prasanth <kesavarapu.siva@gmail.com>"]
 @@ -11,45 +11,21 @@ classifiers = [
